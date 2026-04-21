@@ -55,7 +55,8 @@ func DownloaderHandle(w http.ResponseWriter, r *http.Request) {
 
 	result := []byte(service.Convert(string(byteFile)))
 
-	time1 := time.Now().UTC().Format("02-01-2006 15-04-05")
+	//time1 := time.Now().UTC().Format("02-01-2006 15-04-05")
+	time1 := time.Now().UTC().String()
 
 	err = os.WriteFile(time1+filepath.Ext(handler.Filename), result, 0644)
 	if err != nil {
